@@ -1,0 +1,740 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+header {
+    background-color: #005baa;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+main {
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    width: 400px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.login-container > p {
+    text-align: center;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-container form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #005baa;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-container form button:hover {
+    background-color: #004580;
+}
+
+.login-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.login-links button {
+    border: none;
+    background: none;
+    color: #005baa;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #777;
+}
+/* =========================================
+   DASHBOARD
+========================================= */
+
+nav {
+    background-color: #ffffff;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    background-color: #005baa;
+    color: white;
+}
+
+nav button {
+    margin-left: auto;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    background-color: #dc3545;
+    color: white;
+    cursor: pointer;
+}
+
+nav button:hover {
+    background-color: #b02a37;
+}
+
+
+/* Konten dashboard */
+
+main {
+    min-height: 70vh;
+    display: block;
+    padding: 30px;
+}
+
+
+/* Greeting */
+
+.dashboard-welcome {
+    background: linear-gradient(
+        135deg,
+        #005baa,
+        #0077cc
+    );
+
+    color: white;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    margin-bottom: 25px;
+}
+
+.dashboard-welcome h2 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.dashboard-welcome p {
+    color: white;
+}
+
+
+/* Informasi pengguna */
+
+.dashboard-card {
+    background-color: white;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-card h2 {
+    margin-bottom: 15px;
+}
+
+.dashboard-card p {
+    margin-bottom: 8px;
+}
+
+
+/* Menu dashboard */
+
+.dashboard-menu {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+
+    margin-top: 15px;
+}
+
+.menu-card {
+    background-color: white;
+
+    padding: 22px;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    color: #333;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.08);
+
+    transition: 0.2s;
+}
+
+.menu-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 7px 18px rgba(0, 0, 0, 0.12);
+}
+
+.menu-card h3 {
+    color: #005baa;
+
+    margin-bottom: 10px;
+}
+
+.menu-card p {
+    color: #666;
+
+    font-size: 14px;
+}
+
+
+/* Menu laporan */
+
+.laporan-menu {
+    margin-top: 15px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.laporan-menu a {
+    color: #005baa;
+
+    text-decoration: none;
+
+    font-size: 14px;
+}
+
+.laporan-menu a:hover {
+    text-decoration: underline;
+}
+
+
+/* Statistik */
+
+.dashboard-statistik {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin-top: 15px;
+}
+
+.stat-card {
+    background-color: white;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.stat-card span {
+    font-size: 35px;
+}
+
+.stat-card h3 {
+    font-size: 28px;
+
+    color: #005baa;
+
+    margin: 8px 0;
+}
+
+.stat-card p {
+    color: #666;
+}
+
+
+/* Responsive */
+
+@media (max-width: 900px) {
+
+    .dashboard-menu {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    nav {
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+
+    nav button {
+        margin-left: 0;
+    }
+
+    .dashboard-menu {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-statistik {
+        grid-template-columns: 1fr;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+}
+/* =========================================
+   MODAL
+========================================= */
+
+.modal {
+    display: none;
+
+    position: fixed;
+
+    z-index: 1000;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.55);
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+
+.modal-content {
+    position: relative;
+
+    width: 100%;
+    max-width: 450px;
+
+    background-color: white;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+
+.modal-content h2 {
+    margin-bottom: 10px;
+
+    color: #005baa;
+}
+
+
+.modal-content p {
+    margin-bottom: 20px;
+
+    color: #666;
+}
+
+
+.modal-close {
+    position: absolute;
+
+    top: 10px;
+    right: 15px;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 28px;
+
+    color: #777;
+
+    cursor: pointer;
+}
+
+
+.modal-close:hover {
+    color: #dc3545;
+}
+
+
+.modal-content .form-group {
+    margin-bottom: 20px;
+}
+
+
+.modal-content input {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+}
+
+
+.modal-content form button {
+    width: 100%;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background-color: #005baa;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+
+.modal-content form button:hover {
+    background-color: #004580;
+}
+/* =========================================
+   TRACKING PENGIRIMAN
+========================================= */
+
+.tracking-info {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+}
+
+.tracking-info p {
+    margin-bottom: 10px;
+}
+
+.tracking-info strong {
+    display: inline-block;
+    min-width: 130px;
+}
+
+
+/* TIMELINE */
+
+.tracking-timeline {
+    position: relative;
+
+    margin-top: 25px;
+
+    margin-left: 10px;
+
+    padding-left: 30px;
+}
+
+
+/* Garis timeline */
+
+.tracking-timeline::before {
+    content: "";
+
+    position: absolute;
+
+    left: 7px;
+    top: 5px;
+    bottom: 5px;
+
+    width: 3px;
+
+    background-color: #005baa;
+}
+
+
+/* Item timeline */
+
+.timeline-item {
+    position: relative;
+
+    display: flex;
+
+    margin-bottom: 25px;
+}
+
+
+/* Titik timeline */
+
+.timeline-dot {
+    position: absolute;
+
+    left: -30px;
+    top: 3px;
+
+    width: 16px;
+    height: 16px;
+
+    background-color: #005baa;
+
+    border: 3px solid white;
+
+    border-radius: 50%;
+
+    box-shadow: 0 0 0 2px #005baa;
+}
+
+
+/* Isi timeline */
+
+.timeline-content {
+    background-color: white;
+
+    padding: 15px 18px;
+
+    border-radius: 8px;
+
+    width: 100%;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+
+.timeline-content strong {
+    display: block;
+
+    color: #005baa;
+
+    margin-bottom: 7px;
+}
+
+
+.timeline-content p {
+    margin: 0;
+
+    color: #555;
+
+    line-height: 1.5;
+}
+.menu-card {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+}
+
+.menu-card:hover {
+    transform: translateY(-4px);
+}
+/* =========================================
+   LAPORAN
+========================================= */
+
+.report-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin-top: 20px;
+}
+
+
+.report-box {
+    background: #f8f9fa;
+
+    border-radius: 10px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    border: 1px solid #e5e5e5;
+}
+
+
+.report-box h3 {
+    margin: 0 0 10px;
+
+    font-size: 32px;
+
+    color: #005baa;
+}
+
+
+.report-box p {
+    margin: 0;
+
+    color: #555;
+}
+
+
+@media (max-width: 768px) {
+
+    .report-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* Perbaikan tabel histori transaksi */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: #ffffff;
+}
+
+th,
+td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+    white-space: nowrap;
+}
+
+th {
+    background-color: #005baa;
+    color: #ffffff;
+}
+
+tbody tr:hover {
+    background-color: #f1f6fc;
+}
+
+td button {
+    background-color: #005baa;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 7px 12px;
+    cursor: pointer;
+}
+
+td button:hover {
+    background-color: #003f7d;
+}
+
+/* =====================================
+   PERAPIAN HALAMAN LOGIN SITTA
+===================================== */
+
+body:has(#loginForm) {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header tetap berada di atas */
+body:has(#loginForm) > header {
+    flex-shrink: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Form login berada di tengah */
+body:has(#loginForm) > main {
+    flex: 1;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 35px 20px;
+}
+
+/* Kotak login */
+body:has(#loginForm) .login-container {
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* Footer berada di bawah */
+body:has(#loginForm) > footer {
+    width: 100%;
+    margin-top: auto;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Tampilan HP */
+@media (max-width: 600px) {
+    body:has(#loginForm) > main {
+        padding: 25px 16px;
+    }
+
+    body:has(#loginForm) .login-container {
+        max-width: 100%;
+    }
+}
