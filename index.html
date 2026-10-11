@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Login SITTA</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <h1>SITTA</h1>
+
+        <p>
+            Sistem Informasi Tiras dan Transaksi Bahan Ajar
+        </p>
+
+    </header>
+
+
+    <!-- KONTEN UTAMA -->
+    <main>
+
+        <!-- FORM LOGIN -->
+        <section class="login-container">
+
+            <h2>
+                Selamat Datang
+            </h2>
+
+            <p>
+                Silakan login untuk melanjutkan
+            </p>
+
+
+            <form id="loginForm">
+
+                <!-- EMAIL -->
+                <div class="form-group">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Masukkan email"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- PASSWORD -->
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Masukkan password"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- TOMBOL LOGIN -->
+                <button type="submit">
+                    Login
+                </button>
+
+            </form>
+
+
+            <!-- LINK TAMBAHAN -->
+            <div class="login-links">
+
+                <button
+                    type="button"
+                    id="forgotPasswordBtn">
+
+                    Lupa Password
+
+                </button>
+
+
+                <button
+                    type="button"
+                    id="registerBtn">
+
+                    Daftar
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ======================================
+         MODAL LUPA PASSWORD
+    ======================================= -->
+
+    <div
+        id="forgotModal"
+        class="modal">
+
+        <div class="modal-content">
+
+
+            <!-- TOMBOL TUTUP -->
+            <button
+                type="button"
+                class="modal-close"
+                id="closeForgotModal">
+
+                &times;
+
+            </button>
+
+
+            <h2>
+                Lupa Password
+            </h2>
+
+
+            <p>
+                Masukkan email yang terdaftar
+                pada sistem.
+            </p>
+
+
+            <form id="forgotForm">
+
+                <div class="form-group">
+
+                    <label for="forgotEmail">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="forgotEmail"
+                        placeholder="nama@ut.ac.id"
+                        required
+                    >
+
+                </div>
+
+
+                <button type="submit">
+                    Periksa Email
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ======================================
+         MODAL DAFTAR
+    ======================================= -->
+
+    <div
+        id="registerModal"
+        class="modal">
+
+        <div class="modal-content">
+
+
+            <!-- TOMBOL TUTUP -->
+            <button
+                type="button"
+                class="modal-close"
+                id="closeRegisterModal">
+
+                &times;
+
+            </button>
+
+
+            <h2>
+                Daftar Pengguna
+            </h2>
+
+
+            <p>
+                Silakan isi data untuk membuat akun.
+            </p>
+
+
+            <form id="registerForm">
+
+
+                <!-- NAMA -->
+                <div class="form-group">
+
+                    <label for="registerNama">
+                        Nama Lengkap
+                    </label>
+
+                    <input
+                        type="text"
+                        id="registerNama"
+                        placeholder="Nama lengkap"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- EMAIL -->
+                <div class="form-group">
+
+                    <label for="registerEmail">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="registerEmail"
+                        placeholder="nama@ut.ac.id"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- PASSWORD -->
+                <div class="form-group">
+
+                    <label for="registerPassword">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="registerPassword"
+                        placeholder="Minimal 6 karakter"
+                        minlength="6"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- TOMBOL DAFTAR -->
+                <button type="submit">
+                    Daftar
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            &copy; 2026 SITTA - Universitas Terbuka
+        </p>
+
+    </footer>
+
+
+
+    <!-- JAVASCRIPT DATA -->
+    <script src="js/data.js"></script>
+
+
+    <!-- JAVASCRIPT UTAMA -->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard SITTA</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <h1>SITTA</h1>
+
+        <p>
+            Sistem Informasi Tiras dan Transaksi Bahan Ajar
+        </p>
+
+    </header>
+
+
+    <!-- NAVIGASI -->
+    <nav>
+
+        <a href="stok.html" class="menu-card">
+
+    <h3>📚 Informasi Bahan Ajar</h3>
+
+    <p>
+        Melihat informasi dan stok bahan ajar.
+    </p>
+
+
+        <a href="stok.html">
+            Informasi Bahan Ajar
+        </a>
+
+        <a href="tracking.html">
+            Tracking Pengiriman
+        </a>
+
+        <a href="laporan.html">
+            Laporan
+        </a>
+        
+        <a href="#histori">
+            Histori Transaksi
+        </a>
+
+        <button id="logoutBtn">
+            Logout
+        </button>
+
+    </nav>
+
+
+    <!-- KONTEN UTAMA -->
+    <main>
+
+        <!-- GREETING -->
+        <section class="dashboard-welcome">
+
+            <h2 id="greeting">
+                Selamat Datang
+            </h2>
+
+            <p>
+                Selamat datang di Dashboard Aplikasi SITTA.
+            </p>
+
+        </section>
+
+
+        <!-- INFORMASI PENGGUNA -->
+        <section class="dashboard-card">
+
+            <h2>
+                Informasi Pengguna
+            </h2>
+
+            <p>
+                Nama:
+                <strong id="namaPengguna">
+                    -
+                </strong>
+            </p>
+
+            <p>
+                Role:
+                <strong id="rolePengguna">
+                    -
+                </strong>
+            </p>
+
+            <p>
+                Lokasi:
+                <strong id="lokasiPengguna">
+                    -
+                </strong>
+            </p>
+
+        </section>
+
+
+        <!-- MENU UTAMA -->
+        <section>
+
+            <h2>
+                Menu Utama
+            </h2>
+
+
+            <div class="dashboard-menu">
+
+
+                <!-- BAHAN AJAR -->
+                <a href="stok.html"
+                    class="menu-card">
+
+                    <h3>
+                        📚 Informasi Bahan Ajar
+                    </h3>
+
+                    <p>
+                        Melihat informasi dan stok
+                        bahan ajar.
+                    </p>
+
+                </a>
+
+
+                <!-- TRACKING -->
+                <a href="tracking.html"
+                    class="menu-card">
+
+                    <h3>
+                        🚚 Tracking Pengiriman
+                    </h3>
+
+                    <p>
+                        Melacak status pengiriman
+                        bahan ajar.
+                    </p>
+
+                </a>
+
+
+                <!-- LAPORAN -->
+                <div class="menu-card"
+                    id="laporan">
+
+                    <h3>
+                        📊 Laporan
+                    </h3>
+
+                    <p>
+                        Monitoring dan rekap
+                        bahan ajar.
+                    </p>
+
+                    <div class="laporan-menu">
+
+                        <a href="tracking.html">
+                            Monitoring Progress DO
+                        </a>
+
+                        <a href="stok.html">
+                            Rekap Bahan Ajar
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- HISTORI -->
+                <div class="menu-card"
+                    id="histori">
+
+                    <h3>
+                        🧾 Histori Transaksi
+                    </h3>
+
+                    <p>
+                        Melihat histori transaksi
+                        bahan ajar.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- STATISTIK -->
+        <section>
+
+            <h2>
+                Ringkasan SITTA
+            </h2>
+
+            <div class="dashboard-statistik">
+
+
+                <div class="stat-card">
+
+                    <span>
+                        📚
+                    </span>
+
+                    <h3>
+                        5
+                    </h3>
+
+                    <p>
+                        Jenis Bahan Ajar
+                    </p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span>
+                        📦
+                    </span>
+
+                    <h3>
+                        1.587
+                    </h3>
+
+                    <p>
+                        Total Stok
+                    </p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span>
+                        🚚
+                    </span>
+
+                    <h3>
+                        2
+                    </h3>
+
+                    <p>
+                        Data Tracking
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            &copy; 2026 SITTA - Universitas Terbuka
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="js/data.js"></script>
+
+    <script src="js/script.js"></script>
+
+
+</body>
+
+</html>

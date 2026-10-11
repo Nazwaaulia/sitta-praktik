@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Histori Transaksi - SITTA</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>SITTA</h1>
+        <p>Sistem Informasi Tiras dan Transaksi Bahan Ajar</p>
+    </header>
+
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="stok.html">Informasi Bahan Ajar</a>
+        <a href="tracking.html">Tracking Pengiriman</a>
+        <a href="laporan.html">Laporan</a>
+        <a href="histori.html" class="active">Histori Transaksi</a>
+        <button type="button" id="logoutBtn">Logout</button>
+    </nav>
+
+    <main>
+
+        <section class="dashboard-card">
+            <h2>Histori Transaksi</h2>
+            <p>
+                Melihat riwayat transaksi dan pengiriman
+                bahan ajar yang tercatat pada sistem SITTA.
+            </p>
+        </section>
+
+        <section class="dashboard-card">
+            <h2>Daftar Histori Transaksi</h2>
+
+            <div class="form-group">
+                <label for="cariHistori">
+                    Cari Transaksi
+                </label>
+
+                <input
+                    type="text"
+                    id="cariHistori"
+                    placeholder="Cari nomor DO atau nama pengguna">
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Nomor DO</th>
+                            <th>Nama Pengguna</th>
+                            <th>Ekspedisi</th>
+                            <th>Tanggal Kirim</th>
+                            <th>Status</th>
+                            <th>Total</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tabelHistori">
+                    </tbody>
+                </table>
+            </div>
+
+            <p id="jumlahHistori">
+                Menampilkan 0 transaksi.
+            </p>
+        </section>
+
+        <section
+            class="dashboard-card"
+            id="detailHistori"
+            style="display: none;">
+
+            <h2>Detail Transaksi</h2>
+
+            <div id="isiDetailHistori"></div>
+
+            <button
+                type="button"
+                id="tutupDetailHistori">
+                Tutup Detail
+            </button>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SITTA - Universitas Terbuka</p>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/laporan.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const tabel = document.getElementById("tabelHistori");
+            const inputCari = document.getElementById("cariHistori");
+            const jumlah = document.getElementById("jumlahHistori");
+            const detail = document.getElementById("detailHistori");
+            const isiDetail = document.getElementById("isiDetailHistori");
+            const tombolTutup = document.getElementById("tutupDetailHistori");
+
+            function tampilkanHistori() {
+                const data = Object.values(dataTracking || {});
+                const kataKunci = inputCari.value.toLowerCase().trim();
+
+                const hasil = data.filter(function (item) {
+                    return (
+                        String(item.nomorDO || "").toLowerCase().includes(kataKunci) ||
+                        String(item.nama || "").toLowerCase().includes(kataKunci) ||
+                        String(item.ekspedisi || "").toLowerCase().includes(kataKunci) ||
+                        String(item.status || "").toLowerCase().includes(kataKunci)
+                    );
+                });
+
+                tabel.innerHTML = "";
+
+                hasil.forEach(function (item, index) {
+                    const baris = document.createElement("tr");
+
+                    const nilai = [
+                        index + 1,
+                        item.nomorDO || "-",
+                        item.nama || "-",
+                        item.ekspedisi || "-",
+                        item.tanggalKirim || "-",
+                        item.status || "-",
+                        item.total || "-"
+                    ];
+
+                    nilai.forEach(function (teks) {
+                        const sel = document.createElement("td");
+                        sel.textContent = teks;
+                        baris.appendChild(sel);
+                    });
+
+                    const selAksi = document.createElement("td");
+                    const tombol = document.createElement("button");
+
+                    tombol.type = "button";
+                    tombol.textContent = "Detail";
+
+                    tombol.addEventListener("click", function () {
+                        tampilkanDetail(item);
+                    });
+
+                    selAksi.appendChild(tombol);
+                    baris.appendChild(selAksi);
+                    tabel.appendChild(baris);
+                });
+
+                jumlah.textContent =
+                    "Menampilkan " + hasil.length + " dari " +
+                    data.length + " transaksi.";
+            }
+
+            function tampilkanDetail(item) {
+                detail.style.display = "block";
+
+                isiDetail.innerHTML = "";
+
+                const informasi = [
+                    ["Nomor DO", item.nomorDO],
+                    ["Nama Pengguna", item.nama],
+                    ["Status", item.status],
+                    ["Ekspedisi", item.ekspedisi],
+                    ["Tanggal Kirim", item.tanggalKirim],
+                    ["Kode Paket", item.paket],
+                    ["Total", item.total]
+                ];
+
+                informasi.forEach(function (pasangan) {
+                    const paragraf = document.createElement("p");
+                    const label = document.createElement("strong");
+
+                    label.textContent = pasangan[0] + ": ";
+                    paragraf.appendChild(label);
+                    paragraf.appendChild(
+                        document.createTextNode(pasangan[1] || "-")
+                    );
+
+                    isiDetail.appendChild(paragraf);
+                });
+
+                const judulRiwayat = document.createElement("h3");
+                judulRiwayat.textContent = "Riwayat Perjalanan";
+                isiDetail.appendChild(judulRiwayat);
+
+                (item.perjalanan || []).forEach(function (peristiwa) {
+                    const paragraf = document.createElement("p");
+                    const waktu = document.createElement("strong");
+
+                    waktu.textContent = peristiwa.waktu || "-";
+                    paragraf.appendChild(waktu);
+                    paragraf.appendChild(document.createElement("br"));
+                    paragraf.appendChild(
+                        document.createTextNode(peristiwa.keterangan || "-")
+                    );
+
+                    isiDetail.appendChild(paragraf);
+                });
+
+                detail.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            }
+
+            inputCari.addEventListener("input", tampilkanHistori);
+
+            tombolTutup.addEventListener("click", function () {
+                detail.style.display = "none";
+            });
+
+            tampilkanHistori();
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Tracking Pengiriman - SITTA</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header>
+
+        <h1>SITTA</h1>
+
+        <p>
+            Sistem Informasi Tiras dan Transaksi Bahan Ajar
+        </p>
+
+    </header>
+
+
+    <!-- =========================================
+         NAVIGASI
+    ========================================== -->
+
+    <nav>
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="stok.html">
+            Informasi Bahan Ajar
+        </a>
+
+        <a href="tracking.html">
+            Tracking Pengiriman
+        </a>
+
+        <a href="laporan.html">
+            Laporan
+        </a>
+
+        <a href="histori.html">
+            Histori Transaksi
+        </a>
+
+        <button
+            type="button"
+            id="logoutBtn">
+            Logout
+        </button>
+
+    </nav>
+
+
+    <!-- =========================================
+         KONTEN UTAMA
+    ========================================== -->
+
+    <main>
+
+        <!-- FORM TRACKING -->
+
+        <section class="dashboard-card">
+
+            <h2>
+                Tracking Pengiriman
+            </h2>
+
+            <p>
+                Masukkan nomor Delivery Order (DO)
+                untuk melihat status pengiriman
+                bahan ajar.
+            </p>
+
+
+            <form id="trackingForm">
+
+                <div class="form-group">
+
+                    <label for="nomorDO">
+                        Nomor DO
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nomorDO"
+                        placeholder="Contoh: 2023001234"
+                        required>
+
+                </div>
+
+
+                <button type="submit">
+                    Cari Pengiriman
+                </button>
+
+            </form>
+
+        </section>
+
+
+
+        <!-- =====================================
+             HASIL TRACKING
+        ====================================== -->
+
+        <section
+            class="dashboard-card"
+            id="trackingResult"
+            style="display: none;">
+
+            <h2>
+                Detail Pengiriman
+            </h2>
+
+
+            <div class="tracking-info">
+
+                <p>
+
+                    <strong>
+                        Nomor DO:
+                    </strong>
+
+                    <span id="trackingNomorDO">
+                    </span>
+
+                </p>
+
+
+                <p>
+
+                    <strong>
+                        Nama:
+                    </strong>
+
+                    <span id="trackingNama">
+                    </span>
+
+                </p>
+
+
+                <p>
+
+                    <strong>
+                        Status:
+                    </strong>
+
+                    <span id="trackingStatus">
+                    </span>
+
+                </p>
+
+
+                <p>
+
+                    <strong>
+                        Ekspedisi:
+                    </strong>
+
+                    <span id="trackingEkspedisi">
+                    </span>
+
+                </p>
+
+
+                <p>
+
+                    <strong>
+                        Tanggal Kirim:
+                    </strong>
+
+                    <span id="trackingTanggal">
+                    </span>
+
+                </p>
+
+
+                <p>
+
+                    <strong>
+                        Kode Paket:
+                    </strong>
+
+                    <span id="trackingPaket">
+                    </span>
+
+                </p>
+
+
+                <p>
+
+                    <strong>
+                        Total:
+                    </strong>
+
+                    <span id="trackingTotal">
+                    </span>
+
+                </p>
+
+            </div>
+
+
+            <!-- =================================
+                 RIWAYAT PERJALANAN
+            ================================== -->
+
+            <h2>
+                Riwayat Perjalanan
+            </h2>
+
+
+            <div
+                id="trackingTimeline"
+                class="tracking-timeline">
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 SITTA - Universitas Terbuka
+        </p>
+
+    </footer>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="js/data.js"></script>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

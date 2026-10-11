@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Informasi Bahan Ajar - SITTA</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <h1>SITTA</h1>
+
+        <p>
+            Sistem Informasi Tiras dan Transaksi Bahan Ajar
+        </p>
+
+    </header>
+
+
+    <!-- NAVIGASI -->
+    <nav>
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="stok.html">
+            Informasi Bahan Ajar
+        </a>
+
+        <a href="tracking.html">
+            Tracking Pengiriman
+        </a>
+
+        <a href="#">
+            Laporan
+        </a>
+
+        <a href="#">
+            Histori Transaksi
+        </a>
+
+        <button
+            type="button"
+            id="logoutBtn">
+            Logout
+        </button>
+
+    </nav>
+
+
+    <!-- KONTEN UTAMA -->
+    <main>
+
+        <section class="dashboard-card">
+
+            <h2>
+                Informasi Bahan Ajar
+            </h2>
+
+            <p>
+                Menampilkan informasi dan stok
+                bahan ajar yang tersedia.
+            </p>
+
+
+            <!-- PENCARIAN -->
+            <div class="search-container">
+
+                <label for="searchBahanAjar">
+                    Cari Bahan Ajar
+                </label>
+
+                <div class="search-box">
+
+                    <input
+                        type="text"
+                        id="searchBahanAjar"
+                        placeholder="Cari berdasarkan kode atau nama bahan ajar"
+                    >
+
+                    <button
+                        type="button"
+                        id="searchBtn">
+                        Cari
+                    </button>
+
+                    <button
+                        type="button"
+                        id="resetSearchBtn">
+                        Reset
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- TABEL BAHAN AJAR -->
+        <section class="dashboard-card">
+
+            <h2>
+                Daftar Bahan Ajar
+            </h2>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                No
+                            </th>
+
+                            <th>
+                                Kode Lokasi
+                            </th>
+
+                            <th>
+                                Kode Barang
+                            </th>
+
+                            <th>
+                                Nama Bahan Ajar
+                            </th>
+
+                            <th>
+                                Jenis
+                            </th>
+
+                            <th>
+                                Edisi
+                            </th>
+
+                            <th>
+                                Stok
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="tabelBahanAjar">
+
+                        <!-- Data akan dibuat
+                             menggunakan JavaScript -->
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- INFORMASI HASIL -->
+        <section
+            class="dashboard-card"
+            id="hasilPencarian">
+
+            <p>
+                Menampilkan
+                <strong id="jumlahData">
+                    0
+                </strong>
+                data bahan ajar.
+            </p>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            &copy; 2026 SITTA - Universitas Terbuka
+        </p>
+
+    </footer>
+
+
+
+    <!-- DATA -->
+    <script src="js/data.js"></script>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
